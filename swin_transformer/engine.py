@@ -206,11 +206,11 @@ def train(model: torch.nn.Module,
         #new_loss = test_loss
         if test_loss < best_loss:
            print(f"Model best weights updated from loss: {best_loss} -> loss: {test_loss}")
-           print(f"Model best weights saved to {str(save_path)}/eff_model_weights-best_{times}_{str(epoch+1).zfill(3)}.pth")
+           print(f"Model best weights saved to {str(save_path)}/swt_model_weights-best_{times}_{str(epoch+1).zfill(3)}.pth")
            best_loss = test_loss
-           torch.save(model.state_dict(), f"{str(save_path)}/eff_model_weights-best_{times}_{str(epoch+1).zfill(3)}.pth")
-        torch.save(model.state_dict(), f"{str(save_path)}/eff_model_weights-run_{times}_{str(epoch+1).zfill(3)}.pth")
-        print(f"Model weights saved to {str(save_path)}/eff_model_weights_{times}_{str(epoch+1).zfill(3)}.pth")
+           torch.save(model.state_dict(), f"{str(save_path)}/swt_model_weights-best_{times}_{str(epoch+1).zfill(3)}.pth")
+        torch.save(model.state_dict(), f"{str(save_path)}/swt_model_weights-run_{times}_{str(epoch+1).zfill(3)}.pth")
+        print(f"Model weights saved to {str(save_path)}/swt_model_weights_{times}_{str(epoch+1).zfill(3)}.pth")
 
   # Return the filled results at the end of the epochs
   return results
